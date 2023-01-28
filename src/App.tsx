@@ -1,12 +1,20 @@
-import TodoList from "./components/todolist/TodoList"
-import { TodoStore } from "./components/todolist/TodoStore"
+import { Box, Container, styled } from '@mui/material'
+import TodoList from './components/todolist/TodoList'
+import { TodoStore } from './components/todolist/TodoStore'
 
-const App = () => {
+const FlexBox = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
+
+const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <TodoList todoStore={TodoStore}/>
-    </div>
+    <Container className="App">
+          <FlexBox sx={{marginY: 5, marginX: 2}}>
+            <TodoList todoStore={TodoStore}/>
+          </FlexBox>
+    </Container>
   )
 }
-
 export default App
